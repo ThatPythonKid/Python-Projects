@@ -1,0 +1,12 @@
+from turtle import *
+
+speed(0)
+bgcolor("#1c1c1c")
+hideturtle()
+pensize(1)
+col = ["#096166","cyan","#7affe6","#b5fcef","white"]
+for i in range(36//len(col)+1):
+    for colours in ["#096166","cyan","#7affe6","#b5fcef","white"]:
+        color(colours)
+        circle(100)
+        left(10)
