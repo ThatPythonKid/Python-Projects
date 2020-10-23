@@ -1,0 +1,33 @@
+import turtle, random
+
+t = turtle.Turtle()
+t.hideturtle()
+t.speed(0)
+t.pensize(3)
+turtle.bgcolor("#1c1c1c")
+t.color("#22471a")
+def f(a):
+    t.forward(a)
+def l(a):
+    t.left(a)
+def r(a):
+    t.right(a)
+l(90)
+
+def tree(size):
+    if size < 10:
+        return
+    else:
+        f(size)
+        l(30)
+        tree(3*size/4)
+        r(60)
+        tree(3*size/4)
+        l(30)
+        t.color("lime")
+        t.pensize(0.01)
+        t.backward(size)
+        t.pensize(3)
+        t.color("#22471a")
+
+tree(75)
