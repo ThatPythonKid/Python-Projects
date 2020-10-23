@@ -1,0 +1,34 @@
+import turtle, math
+
+t = turtle.Turtle()
+
+t.speed(0)
+
+
+t.color("blue","cyan")
+def f(a):
+    t.forward(a)
+def l(a):
+    t.left(a)
+def r(a):
+    t.right(a)
+t.penup()
+t.goto(-200,100)
+t.pendown()
+t.begin_fill()
+def star(size):
+    if size <= 10:
+        return
+       
+    else:
+        
+        for i in range(1,6):
+            f(size)
+            star(size/3)
+            l(216)
+            #once its done the small star it goes back into the previos
+            #one to complete it
+t.end_fill()       
+    
+star(360)
+turtle.done()
