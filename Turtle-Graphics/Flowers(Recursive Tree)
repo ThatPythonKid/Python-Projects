@@ -1,0 +1,53 @@
+import turtle, random
+
+t = turtle.Turtle()
+t.hideturtle()
+t.speed(0)
+t.pensize(3)
+turtle.bgcolor("#1c1c1c")
+t.color("#22471a")
+def f(a):
+    t.forward(a)
+def l(a):
+    t.left(a)
+def r(a):
+    t.right(a)
+l(90)
+
+
+def leaves(size):
+    if size < 10:
+        t.begin_fill()
+        t.pendown()
+        t.color("orange","yellow")
+        t.circle(2)
+        t.penup()
+        t.end_fill()
+        return
+    else:
+        f(size)
+        l(20)
+        leaves(4*size/5)
+        r(40)
+        leaves(4*size/5)
+        l(20)
+        t.backward(size)
+def trunk(size):
+    if size < 10:
+        return
+    else:
+        f(size)
+        l(20)
+        trunk(4*size/5)
+        r(40)
+        trunk(4*size/5)
+        l(20)
+        t.pensize(0.01)
+        t.color("lime")
+        t.backward(size)
+        t.pensize(3)
+        t.color("green")
+t.color("green")
+trunk(75)
+t.penup()
+leaves(75)
